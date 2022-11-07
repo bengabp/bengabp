@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benedict Onyebuchi - {% block title %} {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/c076662d51.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+<body>
+    <span id="hpsp"></span>
+    
+    <div id="menu-buttons">
+        <div id="home">
+            <i class="fa-solid fa-house-user fa-1xl fa-beat"></i>
+        </div>
+        <div id="projects">
+            <i class="fa-solid fa-code fa-1xl fa-flip"></i>
+        </div>
+        <div id="blogs">
+            <i class="fa-solid fa-blog fa-1xl fa-shake"></i>
+        </div>
+    </div>
+
+    <div id="avatar-container">
+            <!-- <img class="avatar" id="avatar" src="{% static '/images/self_avatar.jpg' %}"> -->
+        <!-- <span>Benedict Onyebuchi</span>
+        <span>Software Engineer</span> -->
+    </div>
+    
+    {% block body %}
+    
+    {% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="{% static 'javascript/main.js' %}"></script>
+</body>
+</html>

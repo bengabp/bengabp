@@ -1,0 +1,52 @@
+{% extends "base_portfolio_template.html" %}
+{% load static %}
+
+{% block body %}
+    <section id="home-sec">
+        <div id="navbar">
+            <div id="iname">
+                <span class="animate-show">Benedict</span>
+                <span class="animate-show">Onyebuchi</span>
+            </div>
+            <div id="menu-buttons-nav">
+                <div>
+                    <span>Home</span>
+                    <i class="fa-solid fa-house-user fa-1xl"></i>
+                </div>
+                <div>
+                    <span>Projects</span>
+                    <i class="fa-solid fa-code fa-1xl"></i>
+                </div>
+                <div>
+                    <span>Blogs</span>
+                    <i class="fa-solid fa-blog fa-1xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="animate-show" style="padding:0 0.5em;">Hi, I am Benedict Onyebuchi.I am a Software Engineer having 2+ years of experience.</h1>
+        
+        <div id="info">
+            <div>
+                <div id="info-cards">
+                    <div class="info-card">
+                        <i class="fa-solid fa-check fa-shake"></i>
+                        <span>I am passionate about developing efficient applications</span>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-check fa-shake"></i>
+                        <span>I believe that the best way to work effectively for a client is to communicate well.</span>
+                    </div>
+                    <div class="info-card">
+                        <i class="fa-solid fa-check fa-shake"></i>
+                        <span>I am available to collaborate on any project and I am always happy to anwser questions about my career</span>
+                    </div>
+                </div>
+            </div>
+            <div id="chart-container">
+                <canvas id="my-github-chart" style="width:100%;max-width:700px;"></canvas>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
