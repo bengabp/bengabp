@@ -1,0 +1,28 @@
+{% extends "base_portfolio_template.html" %}
+{% load static %}
+
+{% block body %}
+    <section id="projects-sec">
+        <h1 class="animate-show" class="title">Projects</h1>
+        <div style="" id="projects-container">
+            {% for project in projects %}
+                <div class="project-card">
+                    <img src="{{project.image_url}}">
+                    <div class="project-card-details">
+                        <div style="display:flex;justify-content:space-around;padding:5px 0;">
+                            <span>{{project.name}}</span>
+                            <a href="{{project.github_url}}" target="_blank"><i class="fa-brands fa-github fa-1xl" style="color:var(--color-light-theme)"></i></a>
+                        </div>
+                        <p>{{project.description}}</p>
+                        
+                        <div class="tags-container">
+                            {% for tag in project.tags %}
+                                <span class="tag">{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

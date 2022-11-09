@@ -17,29 +17,99 @@
 <body>
     <span id="hpsp"></span>
     
-    <div id="menu-buttons">
-        <div id="home">
-            <i class="fa-solid fa-house-user fa-1xl fa-beat"></i>
+    <div id="navbar">
+        <div id="iname" class="animate-show">
+            <span class="animate-show">Benedict</span>
+            <span class="animate-show">Onyebuchi</span>
         </div>
-        <div id="projects">
-            <i class="fa-solid fa-code fa-1xl fa-flip"></i>
+        <div class="menu-buttons-nav">
+            <div onclick="if(window.location.pathname === '/'){scrollToElement('hpsp')}else{window.location = '/'}">
+                <span>Home</span>
+                <i class="fa-solid fa-house-user fa-1xl"></i>
+            </div>
+            <div onclick="window.location = '/projects'">
+                <span>Projects</span>
+                <i class="fa-solid fa-code fa-1xl"></i>
+            </div>
+            <!-- <div>
+                <span>Blogs</span>
+                <i class="fa-solid fa-blog fa-1xl"></i>
+            </div> -->
+            <div onclick="scrollToElement('contact')">
+                <span>Contact</span>
+                <i class="fa-solid fa-message"></i>
+            </div>
         </div>
-        <div id="blogs">
-            <i class="fa-solid fa-blog fa-1xl fa-shake"></i>
-        </div>
+        <i id="hamburger-menu" class="fa-solid fa-bars fa-2xl"></i>
     </div>
 
-    <div id="avatar-container">
-            <!-- <img class="avatar" id="avatar" src="{% static '/images/self_avatar.jpg' %}"> -->
-        <!-- <span>Benedict Onyebuchi</span>
-        <span>Software Engineer</span> -->
+    <div id="menu-bar">
+        <div id="menu-wrapper">
+            <div id="first">
+                <i class="fa-solid fa-arrow-right-long fa-2xl fa-shake" id="menu-close-btn"></i>
+            </div>
+            <div id="second" class="menu-buttons-nav">
+                <div onclick="if(window.location.pathname === '/'){scrollToElement('hpsp')}else{window.location = '/'}">
+                    <span>Home</span>
+                    <i class="fa-solid fa-house-user fa-1xl"></i>
+                </div>
+                <div onclick="window.location = '/projects'">
+                    <span>Projects</span>
+                    <i class="fa-solid fa-code fa-1xl"></i>
+                </div>
+                <!-- <div>
+                    <span>Blogs</span>
+                    <i class="fa-solid fa-blog fa-1xl"></i>
+                </div> -->
+                <div onclick="scrollToElement('contact')">
+                    <span>Contact</span>
+                    <i class="fa-solid fa-message"></i>
+                </div>
+            </div>
+        </div>
     </div>
     
     {% block body %}
     
     {% endblock %}
+    <hr>
+    <footer id="footer">
+        <div id="contact">
+            <h1>Contact Me</h1>
+            <div id="contact-wrapper">
+                <div id="contact-img">
+                    <img src="{% static 'images/contact.svg' %}">
+                </div>
+                <div id="contact-links">
+                    <div id="social-links">
+                        <div class="contact-card">
+                            <a href="https://github.com/bengab-coder" target="_blank"><i class="fa-brands fa-github fa-2xl" style="color:var(--color-light-theme)"></i></a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="https://www.linkedin.com/in/ben-gab-9b375823b" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" style="color:#0582CA"></i></a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="https://t.me/bengabp" target="_blank"><i class="fa-brands fa-telegram fa-2xl" style="color:#0582CA"></i></a>
+                        </div>
+                        <div class="contact-card">
+                            <a href="https://www.facebook.com/ben.gab.963" target="_blank"><i class="fa-brands fa-facebook fa-2xl" style="color:#00A6FB"></i></a>
+                        </div>
+                    </div>
+                    <form>
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Message"></textarea>
+                        <button id="msg-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
     <script src="{% static 'javascript/main.js' %}"></script>
 </body>
 </html>
