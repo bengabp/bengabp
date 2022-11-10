@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.templatetags.static import static
+
+from .functions import email_sender
 
 # Create your views here.
 
@@ -46,3 +48,10 @@ def projects(request):
         },
     ]
     return render(request,"portfolioapp/projects.html",{"projects":projects})
+
+
+def message(request):
+    if request.method != "POST":
+        return JsonResponse({"message":"Failed","description":f"Request should be a post request and not {request.method}"})
+    
+    return HttpResponse(str(request))

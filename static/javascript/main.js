@@ -3,6 +3,12 @@ let hamburgerMenuIcon = document.getElementById("hamburger-menu");
 let menuBar = document.getElementById("menu-bar");
 let menuCloseBtn = document.getElementById("menu-close-btn");
 
+let emailInput = document.querySelector("#form input[type='email']");
+let subjectInput = document.querySelector("#form input[type='text']")
+let messageInput = document.querySelector("#form textarea")
+let sendMessageBtn = document.querySelector("#form button")
+
+
 let navDrawerOpen = false;
 
 anime.timeline({loop: false})
@@ -56,4 +62,21 @@ function scrollToElement (elementId){
     }
     document.getElementById(elementId).scrollIntoView({behavior:"smooth"})
 }
+
+
+sendMessageBtn.addEventListener("click",(event)=>{
+    if (emailInput.innerText.length >= 4){
+        if (subjectInput.innerText.length >= 5){
+            if (messageInput.innerText.length >= 20){
+
+            } else {
+                alert("Message must be 20 characters or more")
+            }
+        } else {
+            alert("Subject must be 5 characters or more");
+        }
+    } else {
+        alert("Email must be 4 characters or more");
+    }
+});
 

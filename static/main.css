@@ -7,7 +7,7 @@ html{
     --color-dark-theme:#001e3c;
     --color-light-theme:#f8fbff;
     --border-color:rgba(255, 255, 255, 0.12);
-    --container-background-color:rgb(19, 47, 76);
+    --container-background-color:#132f4c;
 }
 
 body{
@@ -307,7 +307,7 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     flex-direction: row;
 }
 
-#contact form{
+#contact #form{
     display:flex;
     flex-direction: column;
     justify-content: center;
