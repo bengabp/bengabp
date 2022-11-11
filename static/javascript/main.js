@@ -112,9 +112,12 @@ sendMessageBtn.addEventListener("click",(event)=>{
                 .then(async response => {
                     response =  await response.json();
                     console.log(response);
+                    showToast("Message sent")
                     
                 })
-                .catch(error => {})
+                .catch(error => {
+                    showToast("Failed sending message")
+                })
                 .finally(() => {
                     sendMessageBtn.disabled = false;
                     sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
@@ -126,7 +129,7 @@ sendMessageBtn.addEventListener("click",(event)=>{
 
                 })
             } else {
-                alert("Message must be 20 characters or more")
+                showToast("Message must be 20 characters or more")
                 sendMessageBtn.disabled = false;
                 sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
                 sendMessageBtn.style.color =  "var(--color-light-theme)"
@@ -134,7 +137,7 @@ sendMessageBtn.addEventListener("click",(event)=>{
                 sendMessageBtn.querySelector('i').style.visibility = "hidden";
             }
         } else {
-            alert("Subject must be 5 characters or more");
+            showToast("Subject must be 5 characters or more");
             sendMessageBtn.disabled = false;
             sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
             sendMessageBtn.style.color =  "var(--color-light-theme)"
@@ -142,7 +145,7 @@ sendMessageBtn.addEventListener("click",(event)=>{
             sendMessageBtn.querySelector('i').style.visibility = "hidden";
         }
     } else {
-        alert("Please enter  valid email");
+        showToast("Please enter  valid email");
         sendMessageBtn.disabled = false;
         sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
         sendMessageBtn.style.color =  "var(--color-light-theme)"
@@ -151,3 +154,24 @@ sendMessageBtn.addEventListener("click",(event)=>{
     }
 });
 
+function showToast(message){
+    Toastify({
+        text: message,
+        avatar:"/static/images/bot_pic.jpg",
+        duration:1000,
+        destination: null,
+        newWindow: true,
+        close: true,
+        oldestFirst:false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: false,// Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(36deg, rgba(76,33,87,1) 29%, rgba(49,29,124,1) 78%)",
+          borderRadius:"10px",
+          maxWidth:"250px",
+          border:"1px solid var(--border-color)"
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+}
