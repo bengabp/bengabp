@@ -54,4 +54,19 @@ def message(request):
     if request.method != "POST":
         return JsonResponse({"message":"Failed","description":f"Request should be a post request and not {request.method}"})
     
-    return HttpResponse(str(request))
+    email = request.POST.get("email")
+    subject = request.POST.get("subject")
+    message = request.POST.get("message")
+
+    success = email_sender.send_message(email,subject,message)
+    if not success:
+        return JsonResponse({
+            "message":"Failed",
+            "description":"The server failed while sending your message",
+        })
+
+    return JsonResponse({
+        "message":"Success",
+        "description":"Message sent",
+    })
+    

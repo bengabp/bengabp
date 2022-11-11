@@ -7,7 +7,21 @@ html{
     --color-dark-theme:#001e3c;
     --color-light-theme:#f8fbff;
     --border-color:rgba(255, 255, 255, 0.12);
-    --container-background-color:#132f4c;
+    --container-background-color:hsl(212, 62%, 19%);
+    --container-disabled-bg-color:hsla(212, 63%, 19%, 0.623);
+    --button-light-bg-color:#0582CA;
+}   
+
+button{
+    position:relative;
+}
+
+button i{
+    position:absolute;
+    right:30px;
+    --fa-animation-duration: 0.6s;
+    visibility:hidden;
+
 }
 
 body{
@@ -340,7 +354,7 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     box-shadow:2px 2px 3px black;
     font-family: 'Signika' sans-serif;
     font-size:1.2rem;
-    background-color:#0582CA;
+    background-color:var(--button-light-bg-color);
     color:var(--color-light-theme);
     border:none;
     border-radius:5px;

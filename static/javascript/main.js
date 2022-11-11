@@ -64,19 +64,90 @@ function scrollToElement (elementId){
 }
 
 
-sendMessageBtn.addEventListener("click",(event)=>{
-    if (emailInput.innerText.length >= 4){
-        if (subjectInput.innerText.length >= 5){
-            if (messageInput.innerText.length >= 20){
+function validateEmail(email){
+    let emailRegex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm;
+    let result = email.match(emailRegex);
+    return true ? result !== null && result.length > 0 : false;
+}
 
+emailInput.addEventListener("input",(event)=>{
+    if(emailInput.value.trim().length > 0){
+        if(validateEmail(emailInput.value.trim())){
+            emailInput.style.borderColor = "green";
+        } else {
+            emailInput.style.borderColor = "red";
+        }
+    } else {
+        emailInput.style.borderColor = "var(--border-color)";
+
+    }
+})
+
+
+sendMessageBtn.addEventListener("click",(event)=>{
+    sendMessageBtn.disabled = true;
+    sendMessageBtn.style.backgroundColor = "rgb(91 155 221 / 50%)"
+    sendMessageBtn.style.color =  "rgb(255 255 255 / 50%)"
+    sendMessageBtn.style.boxShadow = "none"
+
+    sendMessageBtn.querySelector('i').style.visibility = "visible";
+
+    if (validateEmail(emailInput.value.trim())){
+        if (subjectInput.value.trim().length >= 5){
+            if (messageInput.value.trim().length >= 20){
+                
+                let data = new FormData();
+                data.append('email', emailInput.value.trim());
+                data.append('subject', subjectInput.value.trim());
+                data.append("message",messageInput.value.trim());
+                // add form input from hidden input elsewhere on the page
+                data.append('csrfmiddlewaretoken', document.querySelector('input[name="csrfmiddlewaretoken"]').value);
+                
+                fetch("/message", {
+                    method: 'POST',
+                    body: data,
+                    credentials: 'same-origin',
+                })
+                .then(result => result)
+                .then(async response => {
+                    response =  await response.json();
+                    console.log(response);
+                    
+                })
+                .catch(error => {})
+                .finally(() => {
+                    sendMessageBtn.disabled = false;
+                    sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
+                    sendMessageBtn.style.color =  "var(--color-light-theme)"
+                    sendMessageBtn.style.boxShadow = "initial"
+                    sendMessageBtn.querySelector('i').style.visibility = "hidden";
+                    subjectInput.value = ""
+                    messageInput.value =  ""
+
+                })
             } else {
                 alert("Message must be 20 characters or more")
+                sendMessageBtn.disabled = false;
+                sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
+                sendMessageBtn.style.color =  "var(--color-light-theme)"
+                sendMessageBtn.style.boxShadow = "initial"
+                sendMessageBtn.querySelector('i').style.visibility = "hidden";
             }
         } else {
             alert("Subject must be 5 characters or more");
+            sendMessageBtn.disabled = false;
+            sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
+            sendMessageBtn.style.color =  "var(--color-light-theme)"
+            sendMessageBtn.style.boxShadow = "initial"
+            sendMessageBtn.querySelector('i').style.visibility = "hidden";
         }
     } else {
-        alert("Email must be 4 characters or more");
+        alert("Please enter  valid email");
+        sendMessageBtn.disabled = false;
+        sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
+        sendMessageBtn.style.color =  "var(--color-light-theme)"
+        sendMessageBtn.style.boxShadow = "initial"
+        sendMessageBtn.querySelector('i').style.visibility = "hidden";
     }
 });
 

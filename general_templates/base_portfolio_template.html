@@ -96,10 +96,11 @@
                         </div>
                     </div>
                     <div id="form">
+                        {% csrf_token %}
                         <input type="email" placeholder="Email" required>
                         <input type="text" placeholder="Subject" required>
                         <textarea placeholder="Message"></textarea>
-                        <button id="msg-btn" style="cursor:pointer;" role="submit">Send Message</button>
+                        <button id="msg-btn" style="cursor:pointer;" role="submit">Send Message <i class="fa-solid fa-circle-notch fa-spin"></i></button>
                     </div>
                 </div>
             </div>
