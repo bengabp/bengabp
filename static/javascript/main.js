@@ -112,7 +112,12 @@ sendMessageBtn.addEventListener("click",(event)=>{
                 .then(async response => {
                     response =  await response.json();
                     console.log(response);
-                    showToast("Message sent")
+
+                    if(response.messageCode === 1){
+                        showToast("Message sent")
+                    } else if (response.messageCode === -1) {
+                        showToast("Failed sending message")
+                    }
                     
                 })
                 .catch(error => {
@@ -157,7 +162,6 @@ sendMessageBtn.addEventListener("click",(event)=>{
 function showToast(message){
     Toastify({
         text: message,
-        avatar:"/static/images/bot_pic.jpg",
         duration:1000,
         destination: null,
         newWindow: true,

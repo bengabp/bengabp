@@ -5,19 +5,24 @@
     <section id="projects-sec">
         <h1 class="animate-show" class="title">Projects</h1>
         <div style="" id="projects-container">
-            {% for project in projects %}
+            {% for repo in repos %}
                 <div class="project-card">
-                    <img src="{{project.image_url}}">
-                    <div class="project-card-details">
+                    <div class="heading">
+                        <span>{{repo.name}}</span>
                         <div style="display:flex;justify-content:space-around;padding:5px 0;">
-                            <span>{{project.name}}</span>
-                            <a href="{{project.github_url}}" target="_blank"><i class="fa-brands fa-github fa-1xl" style="color:var(--color-light-theme)"></i></a>
+                            <a href="{{repo.github_url}}" target="_blank"><i class="fa-brands fa-github fa-2xl" style="color:var(--color-light-theme)"></i></a>
                         </div>
-                        <p>{{project.description}}</p>
-                        
+                    </div>
+                    
+                    <div class="project-card-details">
+                        {% if repo.description is not None %}
+                        <p>{{repo.description}}</p>
+                        {% else %}
+                        <p>No Description</p>
+                        {% endif %}
                         <div class="tags-container">
-                            {% for tag in project.tags %}
-                                <span class="tag">{{tag}}</span>
+                            {% for lang in repo.langs %}
+                                <span class="tag">{{lang}}</span>
                             {% endfor %}
                         </div>
                     </div>

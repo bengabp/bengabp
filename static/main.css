@@ -410,31 +410,38 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
 }
 
 #projects-container{
-    width: 95%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    /* padding: 20px; */
-    align-self: center;
+    width: 90%;
+    display: flex;
+    font-size: 1.1rem;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
+
+
 
 .project-card{
     display: flex;
+    flex-direction: column;
+    background-color: var(--container-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    gap: 3px;
+    width: 300px;
+    height:max-content;
     align-items: stretch;
-    flex-direction: row;
-    background-color:var(--container-background-color);
-    border:1px solid var(--border-color);
-    border-radius:10px;
-    gap:3px;
-    max-width:600px;
+    padding: 10px;
+    box-shadow:2px 2px 3px var(--container-background-color);
 }
 
-.project-card img{
-    width:50%;
-    border-top-left-radius:10px;
-    border-bottom-left-radius: 10px;
-
+.project-card .heading{
+    display: flex;
+    /* background-color: red; */
+    gap:5px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .project-card-details{
@@ -444,12 +451,8 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     position:relative;
 }
 
-.project-card-details span{
-
-}
 
 .project-card-details p{
-    font-size:1.2rem;
 }
 
 .tags-container{
@@ -496,7 +499,7 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     .info{
         flex-direction:column;
     } 
-    #projects-container{
+    /* #projects-container{
         display:grid;
         grid-template-columns:100%;
         grid-row-gap: 10px;
@@ -515,7 +518,7 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
         border-radius:0;
         border-top-left-radius:10px;
         border-top-right-radius: 10px;
-    }
+    } */
 
 }
 
