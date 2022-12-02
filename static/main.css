@@ -4,9 +4,9 @@ html{
 }
 
 :root{
-    --color-dark-theme:#001e3c;
+    --color-dark-theme:#034078;
     --color-light-theme:#f8fbff;
-    --border-color:rgba(255, 255, 255, 0.12);
+    --border-color:rgba(65, 153, 230, 0.289);
     --container-background-color:hsl(212, 62%, 19%);
     --container-disabled-bg-color:hsla(212, 63%, 19%, 0.623);
     --button-light-bg-color:#0582CA;
@@ -24,6 +24,34 @@ button i{
 
 }
 
+@keyframes slidein {
+    from {
+        transform:translateX(-100%);
+    }
+    to {
+        
+        transform:translateX(0%);
+    }
+}
+
+#welcome-text{
+    background-color:var(--border-color);
+    /* border-radius:10px; */
+    border-radius: 0 10px 10px 0;
+    padding:8px;
+    display:flex;
+    /* transition:0.5s; */
+    
+}
+
+.slidein-element{
+    transform:translateX(-100%);
+    animation-name: slidein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
 .toastify{
     outline:none;
     text-decoration: none;
@@ -38,7 +66,7 @@ button i{
 
 body{
     /* background-color: var(--color-dark-theme); */
-    color: var(--color-light-theme);
+    color: var(--color-dark-theme);
     font-family: 'Signika',sans-serif !important;
     font-size: 1.2rem;
     display: flex;
@@ -49,23 +77,21 @@ body{
     flex-direction: column;
     -webkit-user-select: none;
     user-select: none;
-    background: rgb(0,30,60);
-    background: linear-gradient(36deg, rgba(0,30,60,1) 0%, rgba(0,30,60,1) 50%, rgba(49,29,124,1) 94%);
+    background-color:var(--color-light-theme);
 }
 
 ::-webkit-scrollbar{
     /* width:10px; */
-    background-color:var(--container-background-color);
+    background-color:transparent;
+    width:10px;
 }
 
 ::-webkit-scrollbar-track{
-    margin-top:3px;
-    margin-bottom:3px;
-    background-color:transparent;
+
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color:var(--border-color);
+    background-color:var(--color-dark-theme);
 }
 
 h1{
@@ -89,12 +115,12 @@ a{
 } */
 
 
+
 section{
     display:flex;
     padding:0;
     margin:0;
     margin-top:70px;
-    color:var(--color-light-theme);
     flex-direction: column;
     width:100%;
     overflow-x:hidden;
@@ -105,24 +131,6 @@ section{
     
 }
 
-
-/* #avatar-container{
-    display: flex;
-    flex-direction: column;
-}
-
-
-#avatar{
-    width: 30%;
-    border-radius: 50%;
-    min-width:30px;
-    max-width: 150px;
-    box-shadow: 2px 2px 3px black;
-    position: fixed;
-    right: 15%;
-    top: 10px;
-    z-index: 999;
-} */
 
 #navbar{
     display: flex;
@@ -138,10 +146,10 @@ section{
     width:100%;
     z-index:999;
     /* From https://css.glass */
-    background: rgba(0, 30, 60, 0.66);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(16.2px);
+    background: rgba(239, 240, 242, 0.471);
+    box-shadow: 1px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10.2px);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -168,7 +176,7 @@ section{
     gap: 10px;
     padding: 0.5em;
     justify-content: space-between;
-    transition:0.3s;
+    transition:0.5s;
     border-radius: 30px;
     margin-right:30px;
 }
@@ -183,10 +191,9 @@ section{
 }
 
 .menu-buttons-nav div:hover,#iname:hover{
-    background-color:var(--container-background-color);
-    color:var(--color-light-theme);
+    background-color:var(--border-color);
+    /* color:var(--color-light-theme); */
     border-radius:5px;
-    filter: drop-shadow(3px 3px rgba(4, 31, 53, 0.747));
     border-bottom:none;
     /* transform:translateX(10px); */
 }
@@ -206,7 +213,7 @@ section{
     display: flex;
     flex-direction: row;
     gap:10px;
-    color:#edf2fb;
+    
     
 }
 
@@ -238,7 +245,6 @@ section{
     position:relative;
     right:20px;
     transition:0.3s;
-    filter: drop-shadow(3px 3px black);
 }
 
 #hamburger-menu:hover{
@@ -248,7 +254,6 @@ section{
 #menu-bar{
     transition: 0.3s;
     transform: translateX(130%);
-    background-color: var(--color-dark-theme);
     position: fixed;
     right: 0px;
     top:0px;
@@ -259,8 +264,11 @@ section{
     z-index:999;
     width:100%;
     height:150%;
-    background: rgb(0,30,60);
-    background: linear-gradient(36deg, rgba(0,30,60,1) 0%, rgba(0,30,60,1) 50%, rgba(49,29,124,1) 94%);
+    background: rgba(239, 240, 242, 0.471);
+    box-shadow: 1px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 #menu-wrapper{
@@ -293,7 +301,7 @@ section{
     border-bottom:none;
     text-align:center;
     justify-content:center;
-    filter: drop-shadow(2px 2px black);
+    
 }
 
 #footer{
@@ -303,12 +311,13 @@ section{
     width: 100%;
     margin-top: auto;
     justify-items: stretch;
-    background-color: var(--color-dark-theme);
-    color: var(--color-light-theme);
     justify-content: space-around;
     flex-direction: column;
-    background: rgb(49,29,124);
-background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
+    background: #caf0f81f;
+    box-shadow: 1px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 #footer h1{
@@ -327,82 +336,25 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     padding-top:0.3em;
 }
 
-#contact-wrapper{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-#contact #form{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    gap:5px;
-}
-
-
-#contact input,#contact textarea{
-    height:25px;
-    color:var(--color-light-theme);
-    padding:5px 8px;
-    outline:none;
-    font-family: 'Signika' sans-serif;
-    border-radius:5px;
-    background-color:rgba(47, 80, 116, 0.226);
-    border:1px solid var(--border-color);
-    font-size:1.2rem;
-}
-
-#contact textarea{
-    height:100px;
-    resize: none;
-}
-
-#msg-btn{
-    height:50px;
-    width:100%;
-    align-self: center;
-    outline:none;
-    box-shadow:2px 2px 3px black;
-    font-family: 'Signika' sans-serif;
-    font-size:1.2rem;
-    background-color:var(--button-light-bg-color);
-    color:var(--color-light-theme);
-    border:none;
-    border-radius:5px;
-}
-
-#contact #first{
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    align-items: center;
-}
 
 #social-links{
     display: flex;
-    gap: 15px;
-    filter: drop-shadow(3px 3px rgb(1, 11, 20));
-
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-#contact-img{
+.contact-card{
+    cursor:pointer;
     display: flex;
-    justify-content: space-around;
-}
-
-#contact-img img{
-    width:70%;
-}
-
-#contact-wrapper #contact-links{
-    display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    gap:8px;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    padding:10px;
+    min-width:120px;
+    min-height:100px;
 }
-
-
 
 /* Projects Page  */
 #projects-sec{
@@ -424,7 +376,6 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
 .project-card{
     display: flex;
     flex-direction: column;
-    background-color: var(--container-background-color);
     border: 1px solid var(--border-color);
     border-radius: 10px;
     gap: 3px;
@@ -433,6 +384,11 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
     align-items: stretch;
     padding: 10px;
     box-shadow:2px 2px 3px var(--container-background-color);
+    background: rgba(239, 240, 242, 0.471);
+    box-shadow: 0 4px 20px rgba(27, 179, 209, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10.2px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-card .heading{
@@ -483,10 +439,7 @@ background: linear-gradient(36deg, rgba(49,29,124,1) 28%, rgba(0,30,60,1) 74%);
         flex-direction:column;
     }
 
-    #contact-wrapper{
-        flex-direction: column;
-        gap:20px;
-    }
+    
 
     .menu-buttons-nav{
         display:none;

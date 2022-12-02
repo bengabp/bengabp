@@ -1,7 +1,7 @@
 let githubChart = document.getElementById("my-github-chart");
 let githubChart2 = document.getElementById("my-github-chart2");
 
-let GITHUB_INFO_API = "http://127.0.0.1:8080/github-info";
+let GITHUB_INFO_API = "/github-info";
 
 var requestOptions = {
     method: 'GET',
@@ -42,13 +42,8 @@ var requestOptions = {
             labels: xValues,
             datasets: [{
                 label:"Commits Per Month",
-                backgroundColor:[
-                    '#3572A5',
-                    '#f1e05a',
-                    '#e34c26',
-                    '#00B4AB',
-                    '#DA5B0B'
-                  ],
+                borderRadius:5,
+                backgroundColor:'#caf0f8',
                 data: yValues,
             }]
           },
@@ -79,12 +74,22 @@ var requestOptions = {
                     // easing:'linear'
                     grid:{
                         display:false,
-                    }
+                    },
+                    border:{
+                        display:false,
+                    },
+                    
                 },
                 y:{
                     grid:{
                         display:false,
-                    }
+                    },
+                    border:{
+                        display:false,
+                    },
+                    ticks:{
+                        callback:(value,index,ticks) => ""
+                    },
                 }
             }
           }
@@ -111,12 +116,10 @@ var requestOptions = {
                     height:200,
                   data: skills_rank_pie_chart_datas,
                   backgroundColor:[
-                    '#3572A5',
-                    '#f1e05a',
-                    '#e34c26',
-                    '#00B4AB',
-                    '#DA5B0B'
-                  ]
+                    '#caf0f8',
+                ],
+                borderColor:'black',
+                borderWidth:0.1
               }]
             },
             options:{

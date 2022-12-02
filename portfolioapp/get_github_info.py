@@ -20,7 +20,7 @@ def get_repo_informations():
     for repo in settings.github.repositories():
         name = repo.name
         description = repo.description
-        github_url = repo.url
+        github_url = repo.html_url
         langs = repo.languages()
 
         repo_language_stats = {}

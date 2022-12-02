@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'toast.css' %}"
 </head>
+
 <body>
     <span id="hpsp"></span>
     
@@ -33,10 +35,7 @@
                 <span>Projects</span>
                 <i class="fa-solid fa-code fa-1xl"></i>
             </div>
-            <!-- <div>
-                <span>Blogs</span>
-                <i class="fa-solid fa-blog fa-1xl"></i>
-            </div> -->
+            
             <div onclick="scrollToElement('contact')">
                 <span>Contact</span>
                 <i class="fa-solid fa-message"></i>
@@ -59,10 +58,7 @@
                     <span>Projects</span>
                     <i class="fa-solid fa-code fa-1xl"></i>
                 </div>
-                <!-- <div>
-                    <span>Blogs</span>
-                    <i class="fa-solid fa-blog fa-1xl"></i>
-                </div> -->
+                
                 <div onclick="scrollToElement('contact')">
                     <span>Contact</span>
                     <i class="fa-solid fa-message"></i>
@@ -78,32 +74,26 @@
     <footer id="footer">
         <div id="contact">
             <h1>Contact Me</h1>
-            <div id="contact-wrapper">
-                <div id="contact-img">
-                    <img src="{% static 'images/contact.svg' %}">
+            <div id="social-links">
+                <div class="contact-card">
+                    <a href="https://github.com/bengab-coder" target="_blank"><i class="fa-brands fa-github fa-5x" style="color:black;"></i></a>
+                    <span style="color:black;">Github</span>
                 </div>
-                <div id="contact-links">
-                    <div id="social-links">
-                        <div class="contact-card">
-                            <a href="https://github.com/bengab-coder" target="_blank"><i class="fa-brands fa-github fa-2xl" style="color:var(--color-light-theme)"></i></a>
-                        </div>
-                        <div class="contact-card">
-                            <a href="https://www.linkedin.com/in/ben-gab-9b375823b" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" style="color:#0582CA"></i></a>
-                        </div>
-                        <div class="contact-card">
-                            <a href="https://t.me/bengabp" target="_blank"><i class="fa-brands fa-telegram fa-2xl" style="color:#0582CA"></i></a>
-                        </div>
-                        <div class="contact-card">
-                            <a href="https://www.facebook.com/ben.gab.963" target="_blank"><i class="fa-brands fa-facebook fa-2xl" style="color:#00A6FB"></i></a>
-                        </div>
-                    </div>
-                    <div id="form">
-                        {% csrf_token %}
-                        <input type="email" placeholder="Email" required>
-                        <input type="text" placeholder="Subject" required>
-                        <textarea placeholder="Message"></textarea>
-                        <button id="msg-btn" style="cursor:pointer;" role="submit">Send Message <i class="fa-solid fa-circle-notch fa-spin"></i></button>
-                    </div>
+                <div class="contact-card">
+                    <a href="https://www.linkedin.com/in/ben-gab-9b375823b" target="_blank"><i class="fa-brands fa-linkedin fa-5x" style="color:#0582CA"></i></a>
+                    <span>Linkedin</span>
+                </div>
+                <div class="contact-card">
+                    <a href="https://t.me/bengabp" target="_blank"><i class="fa-brands fa-telegram fa-5x" style="color:#0582CA"></i></a>
+                    <span>Telegram</span>
+                </div>
+                <div class="contact-card">
+                    <a href="https://www.facebook.com/ben.gab.963" target="_blank"><i class="fa-brands fa-facebook fa-5x" style="color:#00A6FB"></i></a>
+                    <span>Facebook</span>
+                </div>
+                <div class="contact-card">
+                    <a href="mailto: bengabdev4@gmail.com" ><i class="fa-solid fa-envelope fa-5x" style="color:#00A6FB"></i></a>
+                    <span>Email</span>
                 </div>
             </div>
         </div>
