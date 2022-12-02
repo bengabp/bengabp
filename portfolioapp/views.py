@@ -45,4 +45,19 @@ def message(request):
         "description":"Message sent",
         "messageCode":1,
     })
+
+def github_information(request):
+    with open(settings.GITHUB_INFO_FILE,"rb") as github_info:
+        gi = json.load(github_info)
+        languages_info = gi.get("language_information",{})
+        commits_history = gi.get("commits_history",[])
+
+        return JsonResponse({
+            "message":"Success",
+            "languages_information":languages_info,
+            "commits_history":commits_history,
+            "messageCode":1,
+        })
+
+
     

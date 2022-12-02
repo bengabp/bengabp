@@ -15,6 +15,7 @@ import os
 import time
 from dotenv import load_dotenv
 from github import Github
+from github3 import GitHub
 import json
 import threading
 from portfolioapp.get_github_info import get_repo_informations
@@ -169,10 +170,10 @@ MESSAGE_EMAIL = os.environ.get("MESSAGE_EMAIL")
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 
-github = Github(login_or_token=GITHUB_TOKEN)
+github = GitHub("bengab-coder",GITHUB_TOKEN)
 
 def update_github_information():
-    print("running")
+    print("Updating github information ...")
     while True:   
         get_repo_informations() 
         time.sleep(3600)
