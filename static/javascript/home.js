@@ -1,7 +1,7 @@
 let githubChart = document.getElementById("my-github-chart");
 let githubChart2 = document.getElementById("my-github-chart2");
 
-let GITHUB_INFO_API = "http://127.0.0.1:8090/github-info";
+let GITHUB_INFO_API = "http://127.0.0.1:8080/github-info";
 
 var requestOptions = {
     method: 'GET',
@@ -29,7 +29,9 @@ var requestOptions = {
         var yValues = [];
 
         commits_history.forEach(commit_history => {
-            xValues.push(commit_history.date);
+            let date_split = commit_history.date.split(" ");
+            console.log(date_split)
+            xValues.push(date_split);
             yValues.push(commit_history.value)
         });
 

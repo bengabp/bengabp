@@ -40,7 +40,7 @@ body{
     /* background-color: var(--color-dark-theme); */
     color: var(--color-light-theme);
     font-family: 'Signika',sans-serif !important;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     margin:0;
     padding:0;

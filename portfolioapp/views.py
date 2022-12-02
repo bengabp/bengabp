@@ -19,8 +19,6 @@ def projects(request):
     with open(settings.GITHUB_INFO_FILE,"rb") as github_info:
         gi = json.load(github_info)
         repos = gi.get("repos",[])
-    pprint(repos)
-    print("here")
     return render(request,"portfolioapp/projects.html",{"repos":repos})
 
 

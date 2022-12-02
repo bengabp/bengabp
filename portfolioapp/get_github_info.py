@@ -32,7 +32,7 @@ def get_repo_informations():
             rl.append(language)
 
         repo_language_stats["langs"] = rl
-        
+
         if not repo.private:
             repos.append({
                 'name':name,
@@ -71,7 +71,7 @@ def get_repo_informations():
         g = json.load(gf)
         g["repos"] = repos
         g["language_information"] = language_information
-        g["commits_history"] = commit_history
+        g["commits_history"] = commit_history[-12:]
         
     if g:
         with open(settings.GITHUB_INFO_FILE,"w") as updated:

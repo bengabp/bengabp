@@ -21,7 +21,7 @@
                         <p>No Description</p>
                         {% endif %}
                         <div class="tags-container">
-                            {% for lang in repo.langs %}
+                            {% for lang in repo.langs.langs %}
                                 <span class="tag">{{lang}}</span>
                             {% endfor %}
                         </div>
