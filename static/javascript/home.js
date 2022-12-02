@@ -25,26 +25,29 @@ var requestOptions = {
             return fraction
         }) 
 
-        console.log(commits_history);
+        var xValues = [];
+        var yValues = [];
 
-        var xValues = [50,60,70,80,90,100,110,120,130,140,150,165,180];
-        var yValues = [7,8,8,9,9,9,10,11,14,14,15,16,17];
+        commits_history.forEach(commit_history => {
+            xValues.push(commit_history.date);
+            yValues.push(commit_history.value)
+        });
 
         
         let githubActivityChart = new Chart("my-github-chart", {
-          type: "line",
+          type: "bar",
           data: {
             labels: xValues,
             datasets: [{
                 label:"Commits Per Month",
-                borderDash:[5,5],
-                backgroundColor: "#36e04d",
-                borderColor: "rgba(2, 255, 255, 0.12)",
-                pointStyle:'circle',
-                pointRadius:4,
-                pointHoverRadius:8,
+                backgroundColor:[
+                    '#3572A5',
+                    '#f1e05a',
+                    '#e34c26',
+                    '#00B4AB',
+                    '#DA5B0B'
+                  ],
                 data: yValues,
-                tensor:0.1
             }]
           },
           options:{
@@ -68,15 +71,19 @@ var requestOptions = {
                     }
                 }
             },
-            interaction:{
-                mode:"index",
-                intersect:false,
-            },
             scales:{
                 x:{
-                    type:'linear',
-                    easing:'linear'
+                    // type:'linear',
+                    // easing:'linear'
+                    grid:{
+                        display:false,
+                    }
                 },
+                y:{
+                    grid:{
+                        display:false,
+                    }
+                }
             }
           }
         });
