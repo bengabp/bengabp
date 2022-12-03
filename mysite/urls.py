@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from .error_handlers import error_404_handler
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("portfolioapp.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
+
+handler404 =  error_404_handler

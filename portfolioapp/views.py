@@ -65,5 +65,3 @@ def github_information(request):
             "messageCode":1,
         })
 
-
-    

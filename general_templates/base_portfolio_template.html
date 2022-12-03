@@ -22,10 +22,12 @@
     <span id="hpsp"></span>
     
     <div id="navbar">
-        <div id="iname" class="animate-show">
-            <span class="animate-show">Benedict</span>
-            <span class="animate-show">Onyebuchi</span>
-        </div>
+        <a href="/">
+            <div id="iname">
+                <span>Benedict</span>
+                <span>Onyebuchi</span>
+            </div>
+        </a>
         <div class="menu-buttons-nav">
             <div onclick="if(window.location.pathname === '/'){scrollToElement('hpsp')}else{window.location = '/'}">
                 <span>Home</span>
@@ -39,6 +41,13 @@
             <div onclick="scrollToElement('contact')">
                 <span>Contact</span>
                 <i class="fa-solid fa-message"></i>
+            </div>
+            <div style="background-color:transparent;border:none;">
+                <a href="{% static 'documents/My Resume.pdf' %}" download="">
+                    <button class="action-btn"a>
+                        Download CV
+                    </button>
+                </a>
             </div>
         </div>
         <i id="hamburger-menu" class="fa-solid fa-bars fa-2xl"></i>
@@ -63,6 +72,13 @@
                     <span>Contact</span>
                     <i class="fa-solid fa-message"></i>
                 </div>
+                <div style="background-color:transparent;border:none;">
+                <a href="{% static 'documents/My Resume.pdf' %}" download="">
+                    <button class="action-btn"a>
+                        Download CV
+                    </button>
+                </a>
+            </div>
             </div>
         </div>
     </div>

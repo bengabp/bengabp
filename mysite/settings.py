@@ -51,16 +51,14 @@ SECRET_KEY = 'django-insecure-z%!_&&fyu9gf+=_z(fj0zkj=5yd4a+8n0md)=my^mi#fqj(j9y
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '192.168.192.25',
-    '192.168.225.25',
-    '*',
-    '192.168.19.25'
+    '*'
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,6 +71,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -156,6 +155,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -179,3 +179,4 @@ def update_github_information():
         time.sleep(3600)
 
 threading.Thread(target=update_github_information,daemon=True).start()
+
