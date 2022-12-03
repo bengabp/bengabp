@@ -77,6 +77,20 @@
             </div>
         </div>
 
+        <div id="work-experience" style="margin-top:30px;">
+            <h1 class="heading">Work Experience</h1>
+            <div id="work-exps">
+                {% for work_experience in workexperiences %}
+                    <div class="work-exp">
+                        <div style="display:flex;flex-direction:column;gap:5px;">
+                            <a href="{{work_experience.company_link}}" class="normal-anchor tag" style="width:max-content;padding-right:10px;"><i class="fa-solid fa-building"></i>{{work_experience.company_name}}</a>
+                            <p style="margin:0;">{{work_experience.description}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="info" style="margin-top:20px;">
             <a href="/projects" style="align-self:center;" id="explore-p"> 
                 <button class="action-btn slide-btn" slide-direction="down">Explore Projects</button>

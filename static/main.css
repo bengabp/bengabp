@@ -476,7 +476,7 @@ section{
     margin-bottom:10px;
 }
 
-#technologies{
+#technologies,#work-experience{
     display:flex;
     max-width:1000px;
     flex-wrap:wrap;
@@ -509,6 +509,54 @@ input{
     width:50px;
 }
 
+#work-experience{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    align-items:center;
+    width:100%;
+}
+
+#work-experience p{
+    margin:none;
+}
+
+#work-exps{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.work-exp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    gap:5px;
+    max-width:800px;
+}
+.work-exp i{
+    margin:5px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+
+.work-exp .count{
+    border-radius: 50%;
+    background-color: var(--border-color);
+    padding: 3px 10px;
+}
+
+a.normal-anchor{
+    color:#0582CA;
+}
+
+a:hover{
+    color:#0582cab9;
+}
+
+
 @media only screen and (max-width: 600px) {
     
 }
@@ -519,7 +567,10 @@ input{
         flex-direction:column;
     }
 
-    
+    #chart-container,#chart-container2{
+        max-width:800px;
+        min-height:300px;
+    }
 
     .menu-buttons-nav{
         display:none;

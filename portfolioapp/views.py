@@ -2,22 +2,21 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.templatetags.static import static
 
-from .functions import email_sender
-
 from mysite import settings
 import json
 from pprint import pprint
 import os
 
+from .models import WorkExperience
+
 # Create your views here.
-
-
 
 def home(request):
     tech_dir = settings.BASE_DIR / "static/images/technology_logos"
     technologies = os.listdir(tech_dir)
     context = {
-        "technologies":technologies
+        "technologies":technologies,
+        "workexperiences":WorkExperience.objects.all()
     }
     return render(request,"portfolioapp/home.html",context=context)
 
@@ -29,28 +28,6 @@ def projects(request):
         repos = gi.get("repos",[])
     return render(request,"portfolioapp/projects.html",{"repos":repos})
 
-
-def message(request):
-    if request.method != "POST":
-        return JsonResponse({"message":"Failed","description":f"Request should be a post request and not {request.method}"})
-    
-    email = request.POST.get("email")
-    subject = request.POST.get("subject")
-    message = request.POST.get("message")
-
-    success = email_sender.send_message(email,subject,message)
-    if not success:
-        return JsonResponse({
-            "message":"Failed",
-            "messageCode":-1,
-            "description":"The server failed while sending your message",
-        })
-
-    return JsonResponse({
-        "message":"Success",
-        "description":"Message sent",
-        "messageCode":1,
-    })
 
 def github_information(request):
     with open(settings.GITHUB_INFO_FILE,"rb") as github_info:
