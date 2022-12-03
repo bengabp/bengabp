@@ -189,7 +189,8 @@ section{
     border-radius:5px;
     position:relative;
     bottom:5px;
-    
+    background-color:var(--border-color);
+    color:var(--color-dark-theme);
 }
 
 #iname span{
@@ -219,11 +220,12 @@ section{
     align-items: center;
 }
 
-.menu-buttons-nav div:hover,#iname:hover{
+.menu-buttons-nav div:hover{
     background-color:var(--border-color);
     /* color:var(--color-light-theme); */
     border-radius:5px;
     border-bottom:none;
+    cursor: pointer;
     /* transform:translateX(10px); */
 }
 
