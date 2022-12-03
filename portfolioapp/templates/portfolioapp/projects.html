@@ -4,6 +4,7 @@
 {% block body %}
     <section id="projects-sec">
         <h1 class="animate-show" class="title">Projects</h1>
+        <input type="text" id="searchbar" placeholder="Search Projects...">
         <div style="" id="projects-container">
             {% for repo in repos %}
                 <div class="project-card">
@@ -31,3 +32,8 @@
         </div>
     </section>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'javascript/projects.js' %}"></script>
+{% endblock %}
+

@@ -3,11 +3,6 @@ let hamburgerMenuIcon = document.getElementById("hamburger-menu");
 let menuBar = document.getElementById("menu-bar");
 let menuCloseBtn = document.getElementById("menu-close-btn");
 
-let emailInput = document.querySelector("#form input[type='email']");
-let subjectInput = document.querySelector("#form input[type='text']")
-let messageInput = document.querySelector("#form textarea")
-let sendMessageBtn = document.querySelector("#form button")
-
 
 let navDrawerOpen = false;
 
@@ -70,112 +65,25 @@ function validateEmail(email){
     return true ? result !== null && result.length > 0 : false;
 }
 
-emailInput.addEventListener("input",(event)=>{
-    if(emailInput.value.trim().length > 0){
-        if(validateEmail(emailInput.value.trim())){
-            emailInput.style.borderColor = "green";
-        } else {
-            emailInput.style.borderColor = "red";
-        }
-    } else {
-        emailInput.style.borderColor = "var(--border-color)";
-
-    }
-})
 
 
-sendMessageBtn.addEventListener("click",(event)=>{
-    sendMessageBtn.disabled = true;
-    sendMessageBtn.style.backgroundColor = "rgb(91 155 221 / 50%)"
-    sendMessageBtn.style.color =  "rgb(255 255 255 / 50%)"
-    sendMessageBtn.style.boxShadow = "none"
-
-    sendMessageBtn.querySelector('i').style.visibility = "visible";
-
-    if (validateEmail(emailInput.value.trim())){
-        if (subjectInput.value.trim().length >= 5){
-            if (messageInput.value.trim().length >= 20){
-                
-                let data = new FormData();
-                data.append('email', emailInput.value.trim());
-                data.append('subject', subjectInput.value.trim());
-                data.append("message",messageInput.value.trim());
-                // add form input from hidden input elsewhere on the page
-                data.append('csrfmiddlewaretoken', document.querySelector('input[name="csrfmiddlewaretoken"]').value);
-                
-                fetch("/message", {
-                    method: 'POST',
-                    body: data,
-                    credentials: 'same-origin',
-                })
-                .then(result => result)
-                .then(async response => {
-                    response =  await response.json();
-                    console.log(response);
-
-                    if(response.messageCode === 1){
-                        showToast("Message sent")
-                    } else if (response.messageCode === -1) {
-                        showToast("Failed sending message")
-                    }
-                    
-                })
-                .catch(error => {
-                    showToast("Failed sending message")
-                })
-                .finally(() => {
-                    sendMessageBtn.disabled = false;
-                    sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
-                    sendMessageBtn.style.color =  "var(--color-light-theme)"
-                    sendMessageBtn.style.boxShadow = "initial"
-                    sendMessageBtn.querySelector('i').style.visibility = "hidden";
-                    subjectInput.value = ""
-                    messageInput.value =  ""
-
-                })
-            } else {
-                showToast("Message must be 20 characters or more")
-                sendMessageBtn.disabled = false;
-                sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
-                sendMessageBtn.style.color =  "var(--color-light-theme)"
-                sendMessageBtn.style.boxShadow = "initial"
-                sendMessageBtn.querySelector('i').style.visibility = "hidden";
-            }
-        } else {
-            showToast("Subject must be 5 characters or more");
-            sendMessageBtn.disabled = false;
-            sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
-            sendMessageBtn.style.color =  "var(--color-light-theme)"
-            sendMessageBtn.style.boxShadow = "initial"
-            sendMessageBtn.querySelector('i').style.visibility = "hidden";
-        }
-    } else {
-        showToast("Please enter  valid email");
-        sendMessageBtn.disabled = false;
-        sendMessageBtn.style.backgroundColor = "var(--button-light-bg-color)"
-        sendMessageBtn.style.color =  "var(--color-light-theme)"
-        sendMessageBtn.style.boxShadow = "initial"
-        sendMessageBtn.querySelector('i').style.visibility = "hidden";
-    }
-});
-
-function showToast(message){
-    Toastify({
-        text: message,
-        duration:1000,
-        destination: null,
-        newWindow: true,
-        close: true,
-        oldestFirst:false,
-        gravity: "top", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: false,// Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(36deg, rgba(76,33,87,1) 29%, rgba(49,29,124,1) 78%)",
-          borderRadius:"10px",
-          maxWidth:"250px",
-          border:"1px solid var(--border-color)"
-        },
-        onClick: function(){} // Callback after click
-    }).showToast();
-}
+// function showToast(message){
+//     Toastify({
+//         text: message,
+//         duration:1000,
+//         destination: null,
+//         newWindow: true,
+//         close: true,
+//         oldestFirst:false,
+//         gravity: "top", // `top` or `bottom`
+//         position: "center", // `left`, `center` or `right`
+//         stopOnFocus: false,// Prevents dismissing of toast on hover
+//         style: {
+//           background: "linear-gradient(36deg, rgba(76,33,87,1) 29%, rgba(49,29,124,1) 78%)",
+//           borderRadius:"10px",
+//           maxWidth:"250px",
+//           border:"1px solid var(--border-color)"
+//         },
+//         onClick: function(){} // Callback after click
+//     }).showToast();
+// }

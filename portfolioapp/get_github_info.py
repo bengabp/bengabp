@@ -2,8 +2,6 @@ from datetime import datetime
 from mysite import settings
 from django.templatetags.static import static
 import json
-from pprint import pprint
-import pickle
 from collections import Counter
 
 
@@ -75,7 +73,6 @@ def get_repo_informations():
         
     if g:
         with open(settings.GITHUB_INFO_FILE,"w") as updated:
-            pprint(g)
             json.dump(g,updated,indent=4)
 
     print("Done Updating..")

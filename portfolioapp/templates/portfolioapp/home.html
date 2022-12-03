@@ -9,16 +9,16 @@
         <div class="info" style="" id="info-first">
             <div>
                 <div class="info-cards">
-                    <div class="info-card slidein-element">
-                        <i class="fa-solid fa-check fa-shake animate-show"></i>
+                    <div class="info-card slidein-element toplevel">
+                        <i class="fa-solid fa-check animate-show"></i>
                         <span class="animate-show">I am passionate about developing efficient applications</span>
                     </div>
-                    <div class="info-card slidein-element">
-                        <i class="fa-solid fa-check fa-shake animate-show"></i>
+                    <div class="info-card slidein-element toplevel">
+                        <i class="fa-solid fa-check animate-show"></i>
                         <span class="animate-show">I believe that the best way to work effectively for a client is to communicate well.</span>
                     </div>
-                    <div class="info-card slidein-element">
-                        <i class="fa-solid fa-check fa-shake animate-show"></i>
+                    <div class="info-card slidein-element toplevel">
+                        <i class="fa-solid fa-check animate-show"></i>
                         <span class="animate-show">I am available to collaborate on any project and I am always happy to anwser questions about my career</span>
                     </div>
                 </div>
@@ -28,9 +28,9 @@
             </div>
         </div>
 
-        <h1 class="animate-show">Skills</h1>
         <div class="info">
             <div class="info-cards">
+                <h1 class="animate-show heading">Skills</h1>
                 <div class="info-card slidein-element">
                     <i class="fa-solid fa-check animate-show"></i>
                     <span class="animate-show">Python Development</span>
@@ -55,13 +55,34 @@
                     <i class="fa-solid fa-check animate-show"></i>
                     <span class="animate-show">Web Scraping and Web Automation using Selenium,Requests and Beautifulsoup</span>
                 </div>
-
-                
             </div> 
             <div id="chart-container2">
                 <canvas id="my-github-chart2" style="width:100%;max-width:800px;" class="chart"></canvas>
             </div>
         </div>
+
+        <div id="tech-container">
+            <h1 class="heading">Technologies & Softwares</h1>
+            <div id="technologies">
+                <img src="{% static 'images/technology_logos/django-seeklogo.com.svg' %}" alt="Django-Logo">
+                <img src="{% static 'images/technology_logos/docker.svg' %}" alt="Docker-Logo">
+                <img src="{% static 'images/technology_logos/fastapi-1.svg' %}" alt="Fastapi-Logo">
+                <img src="{% static 'images/technology_logos/flutter-seeklogo.com.svg' %}" alt="Flutter-Logo">
+                <img src="{% static 'images/technology_logos/javascript-js-seeklogo.com.svg' %}" alt="Javascript-Logo">
+                <img src="{% static 'images/technology_logos/linux-tux.svg' %}" alt="Linux-Logo">
+                <img src="{% static 'images/technology_logos/pycharm-seeklogo.com.svg' %}" alt="Pycharm-Logo">
+                <img src="{% static 'images/technology_logos/python-seeklogo.com.svg' %}" alt="Python-Logo">
+                <img src="{% static 'images/technology_logos/visual-studio-code-1.svg' %}" alt="Vscode-Logo">
+                <img src="{% static 'images/technology_logos/flask.svg' %}" alt="Flask-Logo">
+            </div>
+        </div>
+
+        <div class="info" style="margin-top:20px;">
+            <a href="/projects" style="align-self:center;"> 
+                <button>Explore Projects</button>
+            </a>
+        </div>
+
     </section>
 {% endblock %}
 

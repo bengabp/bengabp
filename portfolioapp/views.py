@@ -7,11 +7,19 @@ from .functions import email_sender
 from mysite import settings
 import json
 from pprint import pprint
+import os
 
 # Create your views here.
 
+
+
 def home(request):
-    return render(request,"portfolioapp/home.html")
+    tech_dir = settings.BASE_DIR / "static/images/technology_logos"
+    technologies = os.listdir(tech_dir)
+    context = {
+        "technologies":technologies
+    }
+    return render(request,"portfolioapp/home.html",context=context)
 
 
 def projects(request):
