@@ -1,5 +1,7 @@
 
-#### Hi there 👋 I am Onyebuchi Benedict or bengab for short. I am a Software Engineer having 2+ years of experience in software engineering & development using several technologies and languages such as Python,Javascript, Flask and so on. I am proficient in Backend Development using Flask,Django and Fastapi. However my skills are not limited to Backend Development only. I also have knowledge of mobile development using flutter and I have programmed arduinos and an attiny85 microcontroller before.
+#### Im Ben, an experienced Software Engineer, having skills in backend and api development using django,fastapi and flask. I am passionate about building solutions for day to day challenges. I am actively networking with developers & Engineers across the globe.
+
+Feel free to visit my [Linkedin](https://www.linkedin.com/in/benedict-onyebuchi-9b375823b/) profile also 😉 
 
 <!--**bengabp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
 
