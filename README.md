@@ -1,7 +1,7 @@
 
 #### Hi there 👋 I am Onyebuchi Benedict or bengab for short. I am a Software Engineer having 2+ years of experience in software engineering & development using several technologies and languages such as Python,Javascript, Flask and so on. I am proficient in Backend Development using Flask,Django and Fastapi. However my skills are not limited to Backend Development only. I also have knowledge of mobile development using flutter and I have programmed arduinos and an attiny85 microcontroller before.
 
-<!--**Bengab-coder/bengab-coder** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
+<!--**bengabp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
 
 - 🔭 I’m currently working on more backend projects and collaborating with other people.
 - 🌱 I’m currently learning Docker.
@@ -11,11 +11,11 @@
 - 😄 Pronouns: He/Him/You
 
 ### 🔥 &nbsp; My Stats
-[![GitHub Streak](https://streak-stats.demolab.com/?user=bengab-coder&theme=dark)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com/?user=bengabp&theme=dark)](https://git.io/streak-stats)
 
 ### ⚡ GitHub Statistics
 
-![Mark "bengab" BenGab's GitHub Stats](https://github-readme-stats.vercel.app/api?username=bengab-coder&show_icons=true&theme=github_dark&count_private=true&include_all_commits=true)
+![Mark "bengab" BenGab's GitHub Stats](https://github-readme-stats.vercel.app/api?username=bengabp&show_icons=true&theme=github_dark&count_private=true&include_all_commits=true)
 
 
 
