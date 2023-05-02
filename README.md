@@ -1,15 +1,10 @@
 
-#### Im Ben, an experienced Software Engineer, having skills in backend and api development using django,fastapi and flask. I am passionate about building solutions for day to day challenges. I am actively networking with developers & Engineers across the globe.
-
-Feel free to visit my [Linkedin](https://www.linkedin.com/in/benedict-onyebuchi-9b375823b/) profile also 😉 
-
-<!--**bengabp** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile. -->
+#### Im Ben, an experienced Software Engineer, having skills in backend and api development using django,fastapi and flask..
 
 - 🔭 I’m currently working on more backend projects and collaborating with other people.
 - 🌱 I’m currently learning Docker.
 - 👯 I’m looking to collaborate on backend & python projects.
 - 💬 Ask me anything about Programming, I'll try my best to answer :)
-- 📫 How to reach me: [Telegram](https://t.me/bengabp) [LinkedIn](https://www.linkedin.com/in/ben-gab-9b375823b/)
 - 😄 Pronouns: He/Him/You
 
 ### 🔥 &nbsp; My Stats
@@ -18,8 +13,6 @@ Feel free to visit my [Linkedin](https://www.linkedin.com/in/benedict-onyebuchi-
 ### ⚡ GitHub Statistics
 
 ![Mark "bengab" BenGab's GitHub Stats](https://github-readme-stats.vercel.app/api?username=bengabp&show_icons=true&theme=github_dark&count_private=true&include_all_commits=true)
-
-
 
 ### 🛠 &nbsp;Languages and Tools
 
