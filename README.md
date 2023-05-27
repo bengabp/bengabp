@@ -1,6 +1,3 @@
-
-#### Im Ben, an experienced Software Engineer, having skills in backend and api development using django,fastapi and flask..
-
 - Exploring docker engine api
 - Building web scraping solutions
 - Working on backend apps
