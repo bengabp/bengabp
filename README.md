@@ -1,11 +1,10 @@
 
 #### Im Ben, an experienced Software Engineer, having skills in backend and api development using django,fastapi and flask..
 
-- 🔭 I’m currently working on more backend projects and collaborating with other people.
-- 🌱 I’m currently learning Docker.
-- 👯 I’m looking to collaborate on backend & python projects.
-- 💬 Ask me anything about Programming, I'll try my best to answer :)
-- 😄 Pronouns: He/Him/You
+- Exploring docker engine api
+- Building web scraping solutions
+- Working on backend apps
+- Understanding bot detection and security bypass
 
 ### 🔥 &nbsp; My Stats
 [![GitHub Streak](https://streak-stats.demolab.com/?user=bengabp&theme=dark)](https://git.io/streak-stats)
