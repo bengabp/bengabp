@@ -1,4 +1,4 @@
-- Exploring docker engine api
+- Exploring kubernetes
 - Building web scraping solutions
 - Working on backend apps
 - Understanding bot detection and security bypass
