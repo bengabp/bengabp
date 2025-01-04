@@ -1,7 +1,7 @@
-- Exploring kubernetes
-- Building web scraping solutions
-- Working on backend apps
-- Understanding bot detection and security bypass
+Its the year 2025 and heres what im focusing on
+- Learning C and algorithms
+- Writing more code with lesser abstraction
+- Writing more javascript
 
 ### 🔥 &nbsp; My Stats
 [![GitHub Streak](https://streak-stats.demolab.com/?user=bengabp&theme=dark)](https://git.io/streak-stats)
