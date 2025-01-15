@@ -1,5 +1,5 @@
 Its the year 2025 and heres what im focusing on
-- Learning C and algorithms
+- Learning C++ and algorithms
 - Writing more code with lesser abstraction
 - Writing more javascript
 
