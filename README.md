@@ -1,4 +1,3 @@
-# 2025 Objectives
 - Learning C++ and algorithms
 - Writing more code with lesser abstraction
 - Writing more javascript
