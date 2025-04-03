@@ -4,8 +4,13 @@
 - Writing more javascript & typescript
 - Contribute to opensource
 
-### 🔥 &nbsp; My Stats
-[![GitHub Streak](https://streak-stats.demolab.com?user=bengabp&theme=tokyonight&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&card_height=198)](https://git.io/streak-stats)
+<!-- Copy-paste in your Readme.md file -->
 
-### ⚡ GitHub Statistics
-![Mark "bengab" BenGab's GitHub Stats](https://github-readme-stats.vercel.app/api?username=bengabp&show_icons=true&theme=github_dark&count_private=true&include_all_commits=true)
+<a href="https://next.ossinsight.io/widgets/official/compose-user-dashboard-stats?user_id=84660669" target="_blank" style="display: block" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/compose-user-dashboard-stats/thumbnail.png?user_id=84660669&image_size=auto&color_scheme=dark" width="771" height="auto">
+    <img alt="Dashboard stats of @bengabp" src="https://next.ossinsight.io/widgets/official/compose-user-dashboard-stats/thumbnail.png?user_id=84660669&image_size=auto&color_scheme=light" width="771" height="auto">
+  </picture>
+</a>
+
+<!-- Made with [OSS Insight](https://ossinsight.io/) -->
